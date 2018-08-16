@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const RoomListViewGroupItem = ({ img, title, tags, id }) => (
+const RoomListViewGroupItem = ({ img, title, tags, id, setImage }) => (
   <Link
     to={{ pathname: `/detail/${id}` }}
     className="room-list-view-group-item-container"
+    onClick={() => setImage(id)}
   >
     <img className="image-item" src={img} />
     <div className="item-text-section">

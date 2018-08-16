@@ -1,5 +1,6 @@
 import React from "react";
 import RoomListViewGroup from "./RoomListViewGroup";
+import { connect } from "react-redux";
 
 class RoomListView extends React.Component {
   state = {
@@ -50,9 +51,14 @@ class RoomListView extends React.Component {
   };
 
   renderFolders = () => {
-    return this.state.folders.map((folder, i) => {
+    console.log(this.props.folders);
+    return this.props.folders.map((folder, i) => {
       return (
-        <RoomListViewGroup key={i} title={folder.title} items={folder.items} />
+        <RoomListViewGroup
+          key={i}
+          title={folder.title}
+          images={folder.images}
+        />
       );
     });
   };
@@ -69,4 +75,10 @@ class RoomListView extends React.Component {
   }
 }
 
-export default RoomListView;
+const mapStateToProps = state => ({
+  folders: state.folders,
+  images: state.images,
+  currentImage: state.currentImage
+});
+
+export default connect(mapStateToProps)(RoomListView);

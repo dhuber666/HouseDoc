@@ -1,6 +1,8 @@
 import React from "react";
 import RoomListViewGroupItem from "./RoomListViewGroupItem";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { setImage } from "../actions/ImagesActions";
 
 // This view gets a folder title and the containing items.
 
@@ -8,8 +10,8 @@ class RoomListViewGroup extends React.Component {
   // docs = all the "RoomListViewGroupItems with picture and title and labels"
 
   renderDocs = () => {
-    return this.props.items.map((item, i) => (
-      <RoomListViewGroupItem key={i} {...item} />
+    return this.props.images.map((item, i) => (
+      <RoomListViewGroupItem key={i} {...item} setImage={this.props.setImage} />
     ));
   };
 
@@ -24,4 +26,8 @@ class RoomListViewGroup extends React.Component {
   }
 }
 
-export default withRouter(RoomListViewGroup);
+const mapDispatchToProps = dispatch => ({
+  setImage: id => dispatch(setImage(id))
+});
+
+export default withRouter(connect(mapDispatchToProps)(RoomListViewGroup));
