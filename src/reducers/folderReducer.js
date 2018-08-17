@@ -24,6 +24,14 @@ const initialState = [
         title: "Wand links Eingang asdfasdfasdf",
         tags: ["Elektro", "Wasser"],
         folder: "Wohnzimmer"
+      },
+      {
+        id: 3,
+        img:
+          "https://upload.wikimedia.org/wikipedia/commons/a/a4/White-tiger-2407799_1280.jpg",
+        title: "Abwasch, rechts",
+        tags: ["Elektro", "Wasser"],
+        folder: "Wohnzimmer"
       }
     ]
   }

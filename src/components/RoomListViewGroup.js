@@ -26,8 +26,16 @@ class RoomListViewGroup extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  setImage: id => dispatch(setImage(id))
-});
+const mapDispatchToProps = dispatch => {
+  debugger;
+  return {
+    setImage: id => dispatch(setImage(id))
+  };
+};
 
-export default withRouter(connect(mapDispatchToProps)(RoomListViewGroup));
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(RoomListViewGroup)
+);

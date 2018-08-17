@@ -26,7 +26,7 @@ class DetailView extends React.Component {
   render() {
     return (
       <div className="detail-view-container">
-        <h2> {this.props.folder} </h2>
+        {/* <h2 className="detail-view-title"> {this.props.folder} </h2> */}
         {this.renderDetail()}
       </div>
     );

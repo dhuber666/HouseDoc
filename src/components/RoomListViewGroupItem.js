@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ImageContent from "./ImageContent";
 
 const RoomListViewGroupItem = ({ img, title, tags, id, setImage }) => (
   <Link
@@ -8,15 +9,7 @@ const RoomListViewGroupItem = ({ img, title, tags, id, setImage }) => (
     onClick={() => setImage(id)}
   >
     <img className="image-item" src={img} />
-    <div className="item-text-section">
-      <h3>{title}</h3>
-      <i className="fa fa-tag fa-2x" />
-      {tags.map((tag, id) => (
-        <p key={id} className="p-item">
-          {tag};
-        </p>
-      ))}
-    </div>
+    <ImageContent title={title} tags={tags} />
   </Link>
 );
 
